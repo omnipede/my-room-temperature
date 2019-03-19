@@ -10,11 +10,13 @@
 #define ONE_WIRE_BUS D4
 
 #ifndef STASSID
-#define STASSID "Your_SSID_please"
-#define STAPSK  "Your_passwd_please"
+#define STASSID "YOUR_SSID"
+#define STAPSK  "YOUR_PASSWORD"
 #define HOST "api.thingspeak.com"
 #define PORT 80
-#define WRITE_API_KEY "Your_write_api_key_please"
+#define AWS_HOST "YOUR_AWS_HOST_DOMAIN"
+#define AWS_PORT 3000
+#define WRITE_API_KEY "YOUR_THINGSPEAK_WRITE_API_KEY"
 #endif
 
 const char* ssid     = STASSID;
@@ -22,6 +24,9 @@ const char* password = STAPSK;
 
 const char* host = HOST;
 const uint16_t port = PORT;
+
+const char* aws_host = AWS_HOST;
+const uint16_t aws_port = AWS_PORT;
 
 ESP8266WiFiMulti WiFiMulti;
 
@@ -31,7 +36,6 @@ DallasTemperature sensors(&oneWire);
 void setup() {
   Serial.begin(115200);
 
-  // We start by connecting to a WiFi network
   WiFi.mode(WIFI_STA);
   WiFiMulti.addAP(ssid, password);
 
@@ -53,10 +57,16 @@ void setup() {
   delay(500);
 }
 
-
 void loop() {
+  
+   /* Get temperature. */
   float celsius = 0.0;
-  unsigned long loop_start = millis();
+  sensors.requestTemperatures();
+  celsius = sensors.getTempCByIndex(0);
+  Serial.print("Current temperature: ");
+  Serial.println(celsius);
+
+  /* Send data to Thingspeak. */
   Serial.print("connecting to ");
   Serial.print(host);
   Serial.print(':');
@@ -70,38 +80,32 @@ void loop() {
     delay(5000);
     return;
   }
-
-  /* Get temperature. */
-  sensors.requestTemperatures();
-  celsius = sensors.getTempCByIndex(0);
-  Serial.print("Current temperature: ");
-  Serial.println(celsius);
   
-  /* Send req to server. */
-  String req = "GET https://api.thingspeak.com/update?api_key=" + String(WRITE_API_KEY) + "&field1=" + String(celsius) + "\r\n";
+  String req = "GET /update?api_key=" + String(WRITE_API_KEY) + "&field1=" + String(celsius) + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" +
+               "Connection: close\r\n\r\n";
   client.print(req);
-
-  unsigned long timeout = millis();
-  while(client.available() == 0){
-    if(millis() - timeout > 5000){
-      Serial.println("Timeout!");
-      client.stop();
-      return;
-    }
-  }
 
   Serial.println("closing connection");
   client.stop();
+  delay(60000);
 
-  /* Delay time is 1 min = 60,000msec. */
-  /* If loop took less than 1 min, then wait until 1 min pass. */
-  unsigned long loop_time = millis() - loop_start;
-  if(loop_time < 60000){
-    unsigned long delay_time = 60000 - loop_time;
-    Serial.print("Time taken: ");
-    Serial.println(loop_time);
-    Serial.print("Wait for: ");
-    Serial.println(delay_time);
-    delay(delay_time);
+  /* Send data to AWS. */
+  Serial.println("Connecting to aws ... ");
+  if (!client.connect(aws_host, aws_port)){
+    Serial.println("Can not connect to AWS!");
+    Serial.println("Wait 5 sec ... ");
+    delay(5000);
+    return;
   }
+
+  req = "GET /data?temp=" + String(celsius) + " HTTP/1.1\r\n" + 
+        "Host: " + aws_host + "\r\n" +
+        "Connection: close\r\n\r\n";
+  client.print(req);
+  Serial.print(req);
+
+  Serial.println("closing aws connection");
+  client.stop();
+  delay(60000);
 }
