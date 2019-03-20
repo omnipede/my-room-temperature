@@ -14,7 +14,7 @@
 #define STAPSK  "YOUR_PASSWORD"
 #define HOST "api.thingspeak.com"
 #define PORT 80
-#define AWS_HOST "YOUR_AWS_HOST_DOMAIN"
+#define AWS_HOST "YOUR_AWS_INSTANCE_PUBLIC_DOMAIN"
 #define AWS_PORT 3000
 #define WRITE_API_KEY "YOUR_THINGSPEAK_WRITE_API_KEY"
 #endif
@@ -58,6 +58,7 @@ void setup() {
 }
 
 void loop() {
+  unsigned long loop_start = millis();
   
    /* Get temperature. */
   float celsius = 0.0;
@@ -88,7 +89,8 @@ void loop() {
 
   Serial.println("closing connection");
   client.stop();
-  delay(60000);
+
+  delay(1000);
 
   /* Send data to AWS. */
   Serial.println("Connecting to aws ... ");
@@ -107,5 +109,14 @@ void loop() {
 
   Serial.println("closing aws connection");
   client.stop();
-  delay(60000);
+
+  unsigned long loop_time = millis() - loop_start;
+  if(loop_time < 60000){
+    unsigned long delay_time = 60000 - loop_time;
+    Serial.print("Time taken: ");
+    Serial.println(loop_time);
+    Serial.print("Wait for: ");
+    Serial.println(delay_time);
+    delay(delay_time);
+  }
 }
