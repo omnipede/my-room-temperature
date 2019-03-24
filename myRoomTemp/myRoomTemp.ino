@@ -90,8 +90,6 @@ void loop() {
   Serial.println("closing connection");
   client.stop();
 
-  delay(1000);
-
   /* Send data to AWS. */
   Serial.println("Connecting to aws ... ");
   if (!client.connect(aws_host, aws_port)){
