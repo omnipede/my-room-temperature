@@ -39,26 +39,22 @@ app.get('/graph', function(req, res) {
 
 	var count = req.query.count || 120;
 	count = Number(count);
-	var html = fs.readFile('./test.html', function(err, html) {
-		html = " " + html;
-		
-		connection.query(`select * from sensors order by time DESC limit ${count}`,
-		 function(err, rows, cols) {
+	var html = fs.readFile('./graph.html', function(err, html) {
+		html = " " + html;	
+		var qry = `select * from sensors order by time DESC limit ${count}`;
+		connection.query(qry, function(err, rows, cols) {
 			if (err) throw err;
 			rows = rows.reverse();
 			var data = "";
 			var comma = "";
-			for (var i = 0; i< rows.length; i++) {
-				r = rows[i];
-				data += comma + `[new Date(${Date.parse(r.time)}),${r.value.toFixed(2)}]`;
+			rows.forEach(function(row) {
+				data += comma + `[new Date(${Date.parse(row.time)}),${row.value.toFixed(2)}]`;
 				comma = ",";
-			}
+			})
 			var header = "data.addColumn('date', 'Date');"
 			header += "data.addColumn('number', 'Temp');"
-
 			html = html.replace("<%HEADER%>", header);
 			html = html.replace("<%DATA%>", data);
-
 			res.writeHeader(200, {"Content-Type": "text/html"});
 			res.write(html);
 			res.end();
