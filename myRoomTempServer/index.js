@@ -1,15 +1,8 @@
 const express = require('express');
 const fs = require('fs')
-const mysql = require('mysql')
+const connection = require('./tempDB.js');
 const moment = require('moment-timezone')
 const app = express()
-
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'me',
-	password: 'mypassword',
-	database: 'tempDB',
-})
 
 connection.connect();
 
