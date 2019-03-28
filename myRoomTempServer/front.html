@@ -6,14 +6,9 @@
       google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = new google.visualization.DataTable();
-	
-      <%HEADER%>
-      //data.addColumn('date', 'Date');
-      //data.addColumn('number', 'Temp');
-	  
+      <%HEADER%> 
       data.addRows([
       <%DATA%>
-      //[new Date(1553774925000),25.31],[new Date(1553774991000),25.37],[new Date(1553775052000),25.31]
       ]);
       var options = {
         chart: {
@@ -104,7 +99,7 @@
         <div class="form-group">
           <label for="DumpedData">Dumped Data.</label>
           <textarea class="form-control" id="DumpedData" rows="10">
-
+<%DUMP%>
           </textarea>
         </div>
       </div>
