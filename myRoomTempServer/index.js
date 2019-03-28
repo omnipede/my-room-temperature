@@ -57,6 +57,15 @@ app.get('/graph', function(req, res) {
 			})
 			var header = "data.addColumn('date', 'Date');"
 			header += "data.addColumn('number', 'Temp');"
+
+			var start = 0, end = 0;
+			if (rows.length > 0) {
+				start = moment(new Date(rows[0].time)).tz('Asia/Seoul');
+				end = moment(new Date(rows[rows.length-1].time)).tz('Asia/Seoul');
+			}
+				
+			html = html.replace("<%START%>", start);
+			html = html.replace("<%END%>", end);
 			html = html.replace("<%HEADER%>", header);
 			html = html.replace("<%DATA%>", data);
 			html = html.replace("<%DUMP%>", dump);
