@@ -6,18 +6,9 @@
 #include <ESP8266WiFiMulti.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include "private.h"
 
 #define ONE_WIRE_BUS D4
-
-#ifndef STASSID
-#define STASSID "YOUR_SSID"
-#define STAPSK  "YOUR_PASSWORD"
-#define HOST "api.thingspeak.com"
-#define PORT 80
-#define AWS_HOST "YOUR_AWS_INSTANCE_PUBLIC_DOMAIN"
-#define AWS_PORT 3000
-#define WRITE_API_KEY "YOUR_THINGSPEAK_WRITE_API_KEY"
-#endif
 
 const char* ssid     = STASSID;
 const char* password = STAPSK;
