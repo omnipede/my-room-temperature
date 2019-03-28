@@ -3,3 +3,5 @@ node_modules
 *.swp
 
 tempDB.js
+
+package-lock.json
