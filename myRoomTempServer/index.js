@@ -34,6 +34,7 @@ app.get('/dump', function(req, res) {
 
 app.get('/graph', function(req, res) {
 
+	console.log('Connection from ' + req.connection.remoteAddress);
 	var count = req.query.count || 120;
 	count = Number(count);
 	var html = fs.readFile('./front.html', function(err, html) {
