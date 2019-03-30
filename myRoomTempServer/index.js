@@ -54,7 +54,7 @@ app.get('/graph', function(req, res) {
 				comma = ",";
 			})
 			var header = "data.addColumn('date', 'Date');"
-			header += "data.addColumn('number', 'Temp');"
+			header += "data.addColumn('number', 'Temperature');"
 
 			var start = 0, end = 0;
 			if (rows.length > 0) {
