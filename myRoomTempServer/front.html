@@ -21,6 +21,8 @@
           }
         }
       };
+	  var formatter = new google.visualization.NumberFormat({pattern: '0.00'});
+	  formatter.format(data, 1);
       var chart = new google.charts.Line(document.getElementById('line_top_x'));
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
