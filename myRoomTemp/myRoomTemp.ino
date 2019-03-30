@@ -10,6 +10,11 @@
 
 #define ONE_WIRE_BUS D4
 
+/* 
+	STASSID, STAPSK, HOST, PORT, AWS_HOST, AWS_PORT are macros
+	defined in "private.h" file. 
+*/
+
 const char* ssid     = STASSID;
 const char* password = STAPSK;
 
