@@ -7,7 +7,7 @@
 
 직접 측정한 미세먼지 농도를 전송해준 사람에게 보상으로 주는 암호화폐 토큰이다.
 ## 왜 필요한가?   
-### 1. 미세먼지 측정소를 늘릴 수 있다.  
+### 1. 미세먼지 측정소 를 늘릴 수 있다.  
 <p align="center">
   <img width="300" height="200" src="./Resources/Device_per_area.png">
 </p> 
