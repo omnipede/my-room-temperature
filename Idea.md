@@ -2,10 +2,10 @@
 ===========
 ## 미세먼지 토큰    
 <p align="center">
-  <img width="400" height="200" src="./Resources/Diagram.png">
+  <img width="500" height="300" src="./Resources/Diagram.png">
 </p>   
 
-직접 측정한 미세먼지 농도를 전송해준 사람에게 보상으로 주는 토큰이다.
+직접 측정한 미세먼지 농도를 전송해준 사람에게 보상으로 주는 암호화폐 토큰이다.
 ## 왜 필요한가?   
 ### 1. 미세먼지 측정소를 늘릴 수 있다.  
 <p align="center">
@@ -15,7 +15,7 @@
 
 ### 2. 미세먼지 데이터 위조를 막을 수 있다.  
 <p align="center">
-  <img width="500" height="200" src="./Resources/news.png">
+  <img width="600" height="200" src="./Resources/news.png">
 </p> 
 http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/feed  <br>
 전송받은 농도 데이터를 서버에 저장함과 동시에 블록체인에도 저장하기 때문에 데이터 조작을 막을 수 있다. (탈중앙화) 
