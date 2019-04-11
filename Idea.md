@@ -21,3 +21,9 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
 전송받은 농도 데이터를 서버에 저장함과 동시에 블록체인에도 저장하기 때문에 데이터 조작을 막을 수 있다. (탈중앙화) 
 
 * * *  
+  
+기술 시나리오
+=============
+<p align="center">
+  <img width="100%" height="500" src="./Resources/tech-sceanario.png">
+</p> 
