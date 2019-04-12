@@ -1,11 +1,8 @@
 개요
 ===========
-## 미세먼지 토큰    
-<p align="center">
-  <img width="500" height="300" src="./Resources/Diagram.png">
-</p>   
-
-직접 측정한 미세먼지 농도를 전송해준 사람에게 보상으로 주는 암호화폐 토큰이다.
+## 미세먼지 토큰 IoT 플랫폼   
+측정한 미세먼지 농도를 전송하면, 전송해준 사람에게 보상으로 암호화폐 토큰을 주고,  
+전송받은 미세먼지 농도를 이용해 여러가지 서비스를 제공하는 플랫폼이다. (상세내용 후술)  
 ## 왜 필요한가?   
 ### 1. 미세먼지 측정소 를 늘릴 수 있다.  
 <p align="center">
@@ -23,7 +20,10 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
 * * *  
   
 기술 시나리오
-=============
+=============  
+## Platform
 <p align="center">
   <img width="100%" height="500" src="./Resources/tech-sceanario.png">
 </p> 
+  
+## Service  
