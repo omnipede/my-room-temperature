@@ -23,7 +23,7 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
 =============  
 ## Platform
 <p align="center">
-  <img width="100%" height="500" src="./Resources/tech-sceanario.png">
+  <img width="100%" height="500" src="./Resources/tech-sceanario-1.png">
 </p> 
   
 ## Service  
