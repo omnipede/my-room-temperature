@@ -29,4 +29,12 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
 ## 2.2. Service  
 <p align="center">
   <img width="100%" height="500" src="./Resources/tech-sceanario-2.png">
-</p> 
+</p>  
+
+* * *  
+
+# 3. 센서
+|  sharp_gp2y1010au0f 미세먼지 측정 센서 | neo-6m gps 센서 |
+| --- | --- |
+|![](./Resources/sharp_gp2y1010au0f.png) | ![](./Resources/neo-6m-gps.png) |
+
