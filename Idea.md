@@ -45,7 +45,7 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
   - 위도, 경도 (소수점 둘째 자리까지)  
   - 시간 (DB 저장 시간 기준)  
   
-## 4.2. 저장된 데이터 활용해서 창출할 수 있는 새로운 정보 (2.2. Services 참고)  
+## 4.2. 저장된 데이터 활용해서 창출할 수 있는 새로운 정보 (2.2. Services 참조)  
 <p align="center">
   <img width="100%" height="500" src="./Resources/ML.png">
 </p>  
