@@ -18,12 +18,12 @@
 
 # 3.기술 시나리오  
 
-## 3.1. Platform
+## 3.1. Platform 시스템 구성도
 <p align="center">
   <img width="100%" height="500" src="./Resources/tech-sceanario-1.png">
 </p> 
   
-## 3.2. Services
+## 3.2. Services 시스템 구성도
 <p align="center">
   <img width="100%" height="500" src="./Resources/tech-sceanario-2.png">
 </p>  
