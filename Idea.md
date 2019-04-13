@@ -13,8 +13,10 @@
   <img width="600" height="200" src="./Resources/news.png">
 </p> 
 http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/feed  <br>
-전송받은 농도 데이터를 서버에 저장함과 동시에 블록체인에도 저장하기 때문에 제3자의 데이터 조작은 불가능하다.
+전송받은 농도 데이터를 서버에 저장함과 동시에 블록체인에도 저장하기 때문에 제3자의 데이터 조작은 불가능하다.  
+
 * * *  
+
   
 2.기술 시나리오
 =============  
@@ -43,7 +45,8 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
   - 위도, 경도 (소수점 둘째 자리까지)  
   - 시간 (DB 저장 시간 기준)  
   
-## 4.2. 데이터 활용 플랜
+## 4.2. 저장된 데이터 활용해서 창출할 수 있는 새로운 정보 (2.2. Services 참고)  
 <p align="center">
   <img width="100%" height="500" src="./Resources/ML.png">
 </p>  
+  저장된 미세먼지 농도를 기반으로 앞으로의 미세먼지 농도를 알 수 있다.
