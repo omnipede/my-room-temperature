@@ -10,7 +10,7 @@
 전송받은 미세먼지 농도를 이용해서 소비자들에게 여러가지 서비스를 제공하는 플랫폼.   
 ## 2.2. 왜 만드는가?
 <p align="center">
-  <img width="50%" height="200" src="./Resources/news.png">
+  <img width="60%" height="200" src="./Resources/news.png">
 </p>  
 블록체인 기술을 기반으로 조작, 해킹이 불가능한 신뢰성 있는 미세먼지 서비스를 제공하기 위함이다.   
 
