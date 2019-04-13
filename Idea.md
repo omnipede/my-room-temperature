@@ -30,6 +30,17 @@ http://news.kmib.co.kr/article/view.asp?arcid=0012988785&code=61121111&sid1=int/
   <img width="100%" height="500" src="./Resources/tech-sceanario-2.png">
 </p>  
 
+## 2.3. 구현계획
+| 순서 | 구현 내용 | 사용 기술 |
+| --- | --- | --- |
+| 1 | 센서 제작, 아두이노 펌웨어 작성. | Arduino. |
+| 2 | 암호화폐 토큰 작성, 네트워크에 배포 | Remix, Solidity language. |
+| 3 | 서버에 센서 데이터 수신, 데이터 베이스 저장 기능 추가 | nodejs, express, MySQL |
+| 4 | 웹 페이지 디자인 및 구현 | Reactjs |
+| 5 | 웹 페이지 회원정보 입력 기능 구현, 서버에 회원정보 전송 기능 구현 | ajax, javascript |
+| 6 | 암호화폐 지갑으로 토큰 지급하는 기능 서버에 추가 | Web3, Metamask, nodejs |
+| 7 | 서비스 payment 구현 | Web3, MetaMask, Ethereum |
+| 8 | 웹 페이지에 서비스 어플리케이션 추가 | Reactjs, TensorFlow, Google map, ajax | 
 * * *  
 
 # 3. 센서
