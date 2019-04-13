@@ -50,7 +50,7 @@
   
 ## 4.2. 데이터 흐름도  
 <p align="center">
-  <img width="100%" height="500" src="./Resources/Data-flow.png">
+  <img width="100%" height="500" src="./Resources/Data-flow-2.png">
 </p>  
 
 * * *  
